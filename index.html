@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Anugrah Mineral Persada | Professional Mining Contractor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. GLOBAL VARIABLES & RESET --- */
+        :root {
+            --navy-corporate: #0a192f;
+            --deep-black: #020617;
+            --power-red: #dc3545;
+            --text-dark: #1a1a1a;
+            --pure-white: #ffffff;
+            --light-gray: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* --- 2. NAVBAR --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--navy-corporate);
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            color: var(--navy-corporate) !important;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--power-red) !important;
+        }
+
+        /* --- 3. HERO SECTION --- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Background Stack: Color > Gradient > Image */
+            background-color: var(--deep-black); 
+            background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.8)), 
+                              url('img/background/bg6.png'); /* Pastikan path gambar benar */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding-top: 80px; /* Kompensasi Navbar Fixed */
+        }
+
+        .hero-tagline {
+            color: var(--power-red);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-desc {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Typewriter Effect */
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            border-right: .15em solid var(--power-red);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: -1px;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--power-red); } }
+        
+        /* Scroll Animation */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.5;
+            animation: scrollBounce 2s infinite;
+        }
+        @keyframes scrollBounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
+        /* --- 4. ABOUT SECTION (Dark Theme) --- */
+        .bg-dark-theme {
+            background-color: var(--deep-black);
+            color: #ffffff;
+        }
+
+        .section-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* Kotak Prioritas (Grid 3) */
+        .priority-box {
+            background: rgba(30, 41, 59, 0.4); /* Glass Dark */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .priority-box:hover {
+            transform: translateY(-10px);
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--power-red);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- 5. VISION & MISSION --- */
+        .vision-section {
+            background: var(--navy-corporate);
+            color: white;
+        }
+
+        .mision-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .mision-item i {
+            color: var(--power-red);
+            font-size: 1.4rem;
+            margin-top: -3px;
+        }
+
+        /* --- 6. CAPABILITY (Services) --- */
+        .cap-card {
+            border: 1px solid #eee;
+            border-radius: 15px;
+            transition: 0.3s;
+            background: white;
+            height: 100%;
+        }
+        .cap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--power-red);
+        }
+
+        /* --- 7. MANAGEMENT (Clean Light) --- */
+        .mgmt-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .mgmt-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .mgmt-img-wrapper {
+            width: 100%;
+            aspect-ratio: 3/4; /* Format Pas Foto Standar */
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+        .mgmt-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s;
+        }
+        .mgmt-card:hover img {
+            transform: scale(1.05);
+        }
+        .mgmt-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* --- 8. CONTACT --- */
+        .contact-section {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: var(--navy-corporate);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: 0.4s;
+        }
+        .contact-card:hover .icon-circle {
+            background: var(--power-red);
+            transform: rotateY(180deg);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .typewriter { white-space: normal; border: none; animation: none; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="img/logo/logopt1.png" alt="AMP Logo" class="navbar-logo" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    PT ANUGRAH<br><span style="color:var(--power-red)">MINERAL</span> PERSADA
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="bi bi-list"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vision">Visi Misi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#capability">Kapabilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#management">Manajemen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <span class="hero-tagline">Energy For The Future</span>
+                        
+                        <div class="d-flex justify-content-center">
+                            <h1 class="hero-title typewriter">
+                                Solusi Pertambangan <span style="color: var(--power-red);">Terpercaya</span>
+                            </h1>
+                        </div>
+                        <h1 class="hero-title mt-n2" style="font-size: 2.5rem; opacity: 0.9;">
+                            & Berintegritas
+                        </h1>
+
+                        <p class="hero-desc mt-4">
+                            Kami adalah mitra strategis dalam industri kontraktor pertambangan batu bara, menghadirkan profesionalisme dan efisiensi tinggi melalui integrasi teknologi dan armada modern.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-dark-theme">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-9 text-center" data-aos="fade-up">
+                        <h2 class="section-title text-white">TENTANG KAMI</h2>
+                        <div style="width: 60px; height: 4px; background: var(--power-red); margin: 0 auto 30px;"></div>
+                        
+                        <p class="lead text-white opacity-75">
+                            PT. Anugrah Mineral Persada (AMP Mining Contractor), hadir sebagai perusahaan yang bergerak di bidang pertambangan dengan komitmen tinggi terhadap profesionalisme, kualitas, dan kinerja berkelanjutan.
+                        </p>
+                        <p class="text-secondary small">
+                            Kami hadir untuk menjadi mitra yang andal bagi mitra bisnis maupun calon mitra bisnis. Kami menyambut baik terjalinnya kerja sama dan berharap kemitraan ini dapat membawa kesuksesan serta kemajuan bersama sebagai perusahaan nasional yang unggul dalam operasional energi Indonesia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-4">
+                        <div class="priority-box text-center p-4">
+                            <i class="bi bi-shield-fill-check text-danger fs-1 mb-3 d-block"></i>
+                            <h5 class="text-white fw-bold">Keamanan & K3</h5>
+                            <p class="small text-secondary mb-0">Prioritas utama pada keselamatan kerja dan kesehatan lingkungan untuk mencapai target Zero Accident di setiap area operasional.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="priority-box text-center p-4">
+                            <i class="bi bi-cpu-fill text-danger fs-1 mb-3 d-block"></i>
+                            <h5 class="text-white fw-bold">Efisiensi Tinggi</h5>
+                            <p class="small text-secondary mb-0">Integrasi teknologi modern dan pemeliharaan armada secara berkala guna memastikan optimalisasi produktivitas yang maksimal.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="priority-box text-center p-4">
+                            <i class="bi bi-award-fill text-danger fs-1 mb-3 d-block"></i>
+                            <h5 class="text-white fw-bold">Integritas</h5>
+                            <p class="small text-secondary mb-0">Menjalankan tata kelola bisnis yang transparan, jujur, dan bertanggung jawab terhadap seluruh mitra strategis serta stakeholder.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="vision-section">
+    <div class="container">
+        <div class="row g-5 align-items-start"> <div class="col-lg-5" data-aos="fade-right">
+                <h2 class="section-title text-white">Visi Kami</h2>
+                
+                <div class="text-white opacity-75 mt-4" style="text-align: justify; font-size: 1.05rem; line-height: 1.8;">
+                    <span class="fst-italic">
+                        "Menjadi perusahaan pertambangan batubara yang profesional, berdaya saing, dan berwawasan lingkungan di Indonesia, serta berkomitmen dalam menjamin kesejahteraan sosial dan ekonomi bagi pemegang saham, karyawan, dan masyarakat sekitar, sekaligus berperan aktif dalam mendukung pembangunan daerah melalui program tanggung jawab sosial perusahaan (CSR) yang terencana dan tepat sasaran."
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left">
+                <h2 class="section-title text-white mb-4">Misi Kami</h2>
+                
+                <div class="mision-item d-flex gap-3 mb-3">
+                    <i class="bi bi-check-circle-fill text-danger flex-shrink-0 mt-1"></i>
+                    <p class="mb-0 text-white opacity-75" style="text-align: justify;">
+                        Menjamin kepastian produksi, pengadaan, dan pengiriman batubara secara tepat waktu dan berkelanjutan.
+                    </p>
+                </div>
+
+                <div class="mision-item d-flex gap-3 mb-3">
+                    <i class="bi bi-check-circle-fill text-danger flex-shrink-0 mt-1"></i>
+                    <p class="mb-0 text-white opacity-75" style="text-align: justify;">
+                        Meningkatkan kompetensi, etos kerja, dan profesionalisme karyawan guna memberikan layanan berkualitas kepada pelanggan dan mitra usaha.
+                    </p>
+                </div>
+
+                <div class="mision-item d-flex gap-3 mb-3">
+                    <i class="bi bi-check-circle-fill text-danger flex-shrink-0 mt-1"></i>
+                    <p class="mb-0 text-white opacity-75" style="text-align: justify;">
+                        Mewujudkan perusahaan yang sehat dan menguntungkan secara finansial dengan didukung manajemen yang solid dan profesional.
+                    </p>
+                </div>
+
+                <div class="mision-item d-flex gap-3 mb-3">
+                    <i class="bi bi-check-circle-fill text-danger flex-shrink-0 mt-1"></i>
+                    <p class="mb-0 text-white opacity-75" style="text-align: justify;">
+                        Menyediakan sistem logistik yang andal serta memberikan respons dan solusi yang cepat dan tepat bagi pelanggan dan mitra bisnis.
+                    </p>
+                </div>
+
+                <div class="mision-item d-flex gap-3 mb-3">
+                    <i class="bi bi-check-circle-fill text-danger flex-shrink-0 mt-1"></i>
+                    <p class="mb-0 text-white opacity-75" style="text-align: justify;">
+                        Menjadikan peningkatan kesejahteraan karyawan sebagai salah satu prioritas utama perusahaan.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+      <section id="capability" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" style="color: var(--navy-corporate);">Kapabilitas Kami</h2>
+            <div style="width: 60px; height: 4px; background: var(--power-red); margin: 0 auto;"></div>
+        </div>
+        <div class="row g-4">
+            
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="cap-card p-4 text-center position-relative h-100">
+                    <i class="bi bi-file-earmark-check-fill fs-1 text-danger mb-3 d-block"></i>
+                    <h4 class="fw-bold fs-5">
+                        <a href="berkas.html" class="stretched-link text-decoration-none" style="color: inherit;">
+                            Legalitas & Kepatuhan
+                        </a>
+                    </h4>
+                    <p class="text-muted small">Dokumen perizinan dan kelengkapan administrasi PT. AMP sesuai ketentuan yang berlaku.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="cap-card p-4 text-center position-relative h-100">
+                    <i class="bi bi-truck-front-fill fs-1 text-danger mb-3 d-block"></i>
+                    <h4 class="fw-bold fs-5">
+                        <a href="armada.html" class="stretched-link text-decoration-none" style="color: inherit;">
+                            Armada Alat Berat
+                        </a>
+                    </h4>
+                    <p class="text-muted small">Dukungan ketersediaan unit Excavator dan Articulated Dump Truck (ADT) oleh PT. AMP untuk menunjang operasional di lapangan.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="cap-card p-4 text-center position-relative h-100">
+                    <i class="bi bi-images fs-1 text-danger mb-3 d-block"></i>
+                    <h4 class="fw-bold fs-5">
+                        <a href="galeri.html" class="stretched-link text-decoration-none" style="color: inherit;">
+                            Galeri PT. AMP
+                        </a>
+                    </h4>
+                    <p class="text-muted small">Dokumentasi aktivitas operasional PT. AMP sebagai bukti pelaksanaan kegiatan.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="management" class="bg-light py-5">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: 2px;">Executive Board</span>
+                    <h2 class="section-title d-block" style="color: var(--navy-corporate);">Manajemen Kami</h2>
+                    <p class="text-muted">Dipimpin oleh tenaga profesional yang berdedikasi tinggi dalam industri pertambangan.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mgmt-card">
+                            <div class="mgmt-img-wrapper">
+                                <img src="img/person/pyudi.jpg" alt="FERDY WAHYU YUDIANTO">
+                            </div>
+                            <div class="mgmt-info">
+                                <h5 class="fw-bold mb-1 text-dark">FERDY WAHYU YUDIANTO</h5>
+                                <p class="text-danger small fw-bold text-uppercase mb-0">Direktur Utama</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mgmt-card">
+                            <div class="mgmt-img-wrapper">
+                                <img src="img/person/pfal.jpg" alt="FALDY WAHYU D. DIASTO">
+                            </div>
+                            <div class="mgmt-info">
+                                <h5 class="fw-bold mb-1 text-dark">FALDY WAHYU D. DIASTO</h5>
+                                <p class="text-danger small fw-bold text-uppercase mb-0">Komisaris</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title" style="color: var(--navy-corporate);">Hubungi Kami</h2>
+                    <p class="text-muted mx-auto" style="max-width: 600px;">
+                        Siap menjalin kemitraan strategis? Tim kami siap melayani pertanyaan dan kebutuhan operasional tambang Anda.
+                    </p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="contact-card">
+                            <div class="icon-circle"><i class="bi bi-geo-alt"></i></div>
+                            <h5 class="fw-bold">Head Office</h5>
+                            <p class="text-muted small">Samarinda, Kalimantan Timur<br>Indonesia</p>
+                            <a href="#" class="text-danger text-decoration-none fw-bold small">Lihat Peta <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-card">
+                            <div class="icon-circle"><i class="bi bi-envelope"></i></div>
+                            <h5 class="fw-bold">Email Support</h5>
+                            <p class="text-muted small">amp.mining12@gmail.com</p>
+                            <a href="#" class="text-danger text-decoration-none fw-bold small">Kirim Email <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-card">
+                            <div class="icon-circle"><i class="bi bi-whatsapp"></i></div>
+                            <h5 class="fw-bold">Business Call</h5>
+                            <p class="text-muted small">+62 812-xxxx-xxxx<br>(Senin - Sabtu)</p>
+                            <a href="#" class="text-danger text-decoration-none fw-bold small">Chat WA <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-4 text-white text-center shadow-lg" 
+                     style="background: var(--navy-corporate); border-left: 5px solid var(--power-red);" 
+                     data-aos="zoom-in">
+                    <div class="row align-items-center">
+                        <div class="col-md-8 text-md-start mb-3 mb-md-0">
+                            <h4 class="fw-bold mb-1">Butuh penawaran kerjasama proyek?</h4>
+                            <p class="mb-0 opacity-75 small">Hubungi kami untuk diskusi lebih lanjut mengenai solusi pertambangan Anda.</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <a href="#" class="btn btn-danger px-4 py-2 fw-bold rounded-pill">Hubungi Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #000; color: #888; padding: 30px 0;">
+        <div class="container text-center">
+            <p class="mb-0 small">© 2026 PT ANUGRAH MINERAL PERSADA. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavy Equipment | PT Anugrah Mineral Persada</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0a2647;
+            --accent-red: #dc3545;
+            --bg-light: #f8f9fa;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding-top: 80px;
+        }
+
+        /* ===== NAVBAR (PUTIH) ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar .nav-link {
+            color: var(--primary-blue) !important;
+            font-weight: 600;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--accent-red) !important;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section { padding: 60px 0; }
+
+        .section-title h2 {
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--accent-red);
+            margin: 15px auto;
+        }
+
+        /* ===== FILTER BUTTONS ===== */
+        .filter-btn .btn {
+            margin: 5px;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            color: var(--text-muted);
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        .filter-btn .btn-active, .filter-btn .btn:hover {
+            background: var(--primary-blue) !important;
+            border-color: var(--primary-blue) !important;
+            color: var(--white) !important;
+        }
+
+        /* ===== TABLE AREA ===== */
+        .table-container {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .table thead th {
+            background-color: #f1f4f8;
+            color: var(--primary-blue);
+            border-bottom: 2px solid #dee2e6;
+            padding: 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* ===== GALLERY 16:9 (2 PER BARIS) ===== */
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 38, 71, 0.9));
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 30px;
+            border-top: 1px solid #eee;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo/logopt1.png" alt="Logo" style="height: 45px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navRes">
+                <i class="bi bi-list text-primary"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navRes">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#visi-misi">Visi Misi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#capability">Kapabilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Tim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>DAFTAR HEAVY EQ</h2>
+                <p class="text-muted">Manajemen aset alat berat PT. Anugrah Mineral Persada</p>
+            </div>
+
+            <div class="filter-btn text-center mb-4">
+                <button class="btn btn-active" onclick="filterTable('all', this)">Semua</button>
+                <button class="btn" onclick="filterTable('excavator', this)">Excavator</button>
+                <button class="btn" onclick="filterTable('dumptruck', this)">Dump Truck</button>
+                <button class="btn" onclick="filterTable('support', this)">Support</button>
+            </div>
+
+            <div class="table-container table-responsive">
+                <table class="table align-middle" id="unitTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Unit / Type</th>
+                            <th>No. Unit</th>
+                            <th>S/N Chasis</th>
+                            <th class="text-center">Tahun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-category="excavator">
+                            <td>01</td>
+                            <td><strong>HITACHI ZX 330</strong></td>
+                            <td>EC-054</td>
+                            <td>AUP-040296</td>
+                            <td class="text-center"><span class="badge bg-secondary">2011</span></td>
+                        </tr>
+                        <tr data-category="dumptruck">
+                            <td>02</td>
+                            <td><strong>VOLVO A40G</strong></td>
+                            <td>DT-252</td>
+                            <td>VCE0A40GA00322324</td>
+                            <td class="text-center"><span class="badge bg-secondary">2017</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f1f4f8;">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>VISUALISASI UNIT</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="gallery-item shadow-sm">
+                        <img src="img/he/1.jpg" alt="Excavator Operasional">
+                        <div class="gallery-caption">Excavator Hitachi</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item shadow-sm">
+                        <img src="img/he/2.jpg" alt="Dump Truck Operasional">
+                        <div class="gallery-caption">Volvo Dump Truck</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item shadow-sm">
+                        <img src="img/he/3.jpg" alt="Dozer Operasional">
+                        <div class="gallery-caption">Excavator Komatsu</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item shadow-sm">
+                        <img src="img/he/4.jpg" alt="Support Unit">
+                        <div class="gallery-caption">Support Vehicle</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p class="small mb-0">© 2026 PT Anugrah Mineral Persada. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function filterTable(category, btn) {
+            document.querySelectorAll('.filter-btn .btn').forEach(b => b.classList.remove('btn-active'));
+            btn.classList.add('btn-active');
+            document.querySelectorAll('#unitTable tbody tr').forEach(row => {
+                row.style.display = (category === 'all' || row.dataset.category === category) ? '' : 'none';
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

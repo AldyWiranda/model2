@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Legalitas Perusahaan | PT AMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0a2647;
+            --accent-red: #dc3545;
+            --bg-light: #f8f9fa;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR (PUTIH) ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar .nav-link {
+            color: var(--primary-blue) !important;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--accent-red) !important;
+        }
+
+        .navbar-toggler {
+            border-color: #eee;
+        }
+
+        /* ===== SECTION HEADER (MODERN LIGHT) ===== */
+        .section-legal {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f4f8 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: auto;
+            font-size: 1.05rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-red);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ===== CARD LEGAL (LIGHT THEME) ===== */
+        .legal-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .legal-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 15px 35px rgba(10, 38, 71, 0.1);
+        }
+
+        /* Icon Styling */
+        .legal-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f4f8;
+            color: var(--primary-blue);
+            font-size: 32px;
+            transition: 0.3s;
+        }
+
+        .legal-card:hover .legal-icon {
+            background: var(--accent-red);
+            color: var(--white);
+        }
+
+        /* Text Styling */
+        .legal-card h5 {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .legal-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .card-link {
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        footer {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo/logopt1.png" alt="Logo PT AMP" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navRes">
+                <i class="bi bi-list text-dark"></i>
+            </button>
+
+           <div class="collapse navbar-collapse" id="navRes">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#visi-misi">Visi Misi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#capability">Kapabilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#team">Tim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-legal">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Legalitas Perusahaan</h2>
+                <p>
+                    Seluruh dokumen legal perusahaan dikelola secara resmi dan
+                    sesuai dengan ketentuan perundang-undangan di sektor
+                    pertambangan Indonesia.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-journal-text"></i>
+                            </div>
+                            <h5>Akta Pendirian</h5>
+                            <p>Dokumen resmi pendirian perusahaan yang disahkan oleh notaris dan terdaftar secara hukum.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-card-checklist"></i>
+                            </div>
+                            <h5>NIB Berusaha</h5>
+                            <p>Identitas resmi perusahaan yang diterbitkan melalui sistem OSS sebagai legalitas usaha.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-file-earmark-check"></i>
+                            </div>
+                            <h5>Izin Usaha (IUP)</h5>
+                            <p>Perizinan resmi yang memberikan kewenangan perusahaan dalam melakukan kegiatan pertambangan.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-receipt"></i>
+                            </div>
+                            <h5>NPWP Perusahaan</h5>
+                            <p>Nomor Pokok Wajib Pajak sebagai bukti kepatuhan perusahaan terhadap kewajiban perpajakan.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <h5>Sertifikat & Standar</h5>
+                            <p>Sertifikasi pendukung yang menunjukkan komitmen perusahaan terhadap mutu dan K3.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="#" class="card-link">
+                        <div class="legal-card">
+                            <div class="legal-icon">
+                                <i class="bi bi-folder2-open"></i>
+                            </div>
+                            <h5>Dokumen Lainnya</h5>
+                            <p>Dokumen legal tambahan yang mendukung operasional dan tata kelola perusahaan.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="small mb-0">&copy; 2024 PT. Anugrah Mineral Persada. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
