@@ -14,297 +14,353 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        /* --- 1. GLOBAL VARIABLES & RESET --- */
-        :root {
-            --navy-corporate: #0a192f;
-            --deep-black: #020617;
-            --power-red: #dc3545;
-            --text-dark: #1a1a1a;
-            --pure-white: #ffffff;
-            --light-gray: #f4f7f6;
-        }
+   <style>
+    /* --- 1. GLOBAL VARIABLES & RESET --- */
+    :root {
+        --navy-corporate: #0a192f;
+        --deep-black: #020617;
+        --power-red: #dc3545;
+        --text-dark: #1a1a1a;
+        --pure-white: #ffffff;
+        --light-gray: #f4f7f6;
+        --slate-400: #94a3b8;
+        --slate-300: #cbd5e1;
+    }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--pure-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-        }
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--pure-white);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden; /* Kunci agar tidak bisa digeser ke samping */
+        width: 100%;
+    }
 
+    h1, h2, h3, h4, h5 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+
+    section {
+        padding: 80px 0;
+        position: relative;
+    }
+
+    /* --- 2. NAVBAR --- */
+    .navbar {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        padding: 12px 0;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 75%; 
+    }
+
+    .navbar-logo {
+        height: 45px;
+        width: auto;
+    }
+
+    .logo-text {
+        font-size: 11px;
+        line-height: 1.2;
+        font-weight: 800;
+        color: var(--navy-corporate);
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .nav-link {
+        color: var(--navy-corporate) !important;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 10px;
+        transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+        color: var(--power-red) !important;
+    }
+
+    /* --- 3. HERO SECTION (Typewriter Removed) --- */
+    .hero-section {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: var(--deep-black); 
+        background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.8)), 
+                          url('img/background/bg6.png'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: #ffffff;
+        padding: 100px 20px 50px;
+    }
+
+    .hero-tagline {
+        color: var(--power-red);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        /* Clamp: Min 2rem, scaling 5vw, Max 3.5rem */
+        font-size: clamp(2.2rem, 6vw, 3.8rem);
+        font-weight: 900;
+        margin-bottom: 25px;
+        line-height: 1.1;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-desc {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        color: var(--slate-300);
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        line-height: 1.8;
+    }
+
+    /* Scroll Indicator Animation */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.7;
+        animation: scrollBounce 2s infinite;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    @keyframes scrollBounce {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+        40% {transform: translateY(-12px) translateX(-50%);}
+        60% {transform: translateY(-6px) translateX(-50%);}
+    }
+
+    /* --- 4. ABOUT & CONTENT BLOCKS --- */
+    .bg-dark-theme {
+        background-color: var(--deep-black);
+        color: #ffffff;
+    }
+
+    .section-title {
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .priority-box {
+        background: rgba(30, 41, 59, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        height: 100%;
+        transition: all 0.4s ease;
+    }
+
+    .priority-box:hover {
+        transform: translateY(-10px);
+        background: rgba(30, 41, 59, 0.8);
+        border-color: var(--power-red);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    /* --- 5. VISION & MISSION --- */
+    .vision-section {
+        background: var(--navy-corporate);
+        color: white;
+    }
+
+    .mision-item {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        align-items: flex-start;
+    }
+
+    .mision-item i {
+        color: var(--power-red);
+        font-size: 1.4rem;
+    }
+
+    /* --- 6. CARDS (Capability, Management, Contact) --- */
+    .cap-card, .mgmt-card, .contact-card {
+        background: white;
+        border-radius: 15px;
+        height: 100%;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .cap-card:hover, .mgmt-card:hover, .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        border-color: var(--power-red);
+    }
+.mgmt-info {
+    padding: 20px;
+    text-align: center; /* Mengetengahkan Nama dan Jabatan */
+}
+
+/* Pastikan judul di atas kartu (Section Title) juga di tengah */
+.management-section {
+    text-align: center;
+}
+    .mgmt-img-wrapper {
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        background-color: #e2e8f0;
+    }
+
+    .mgmt-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.5s ease;
+    }
+
+    .mgmt-card:hover img {
+        transform: scale(1.08);
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        background: var(--navy-corporate);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 20px;
+        transition: 0.4s ease;
+    }
+/* --- 8. CONTACT --- */
+.contact-section {
+    text-align: center; /* Mengetengahkan judul section kontak */
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center; /* Mengetengahkan teks dalam kartu */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Mengetengahkan konten Flex (Icon & Button) */
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: var(--navy-corporate);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px; /* 'auto' kiri-kanan sangat penting untuk posisi tengah */
+    transition: 0.4s;
+}
+    .contact-card:hover .icon-circle {
+        background: var(--power-red);
+        transform: rotateY(180deg);
+    }
+
+    /* --- 7. MOBILE RESPONSIVE FIXES --- */
+    @media (max-width: 991.98px) {
         section {
-            padding: 80px 0;
-            position: relative;
+            padding: 60px 0;
         }
 
-        /* --- 2. NAVBAR --- */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-logo {
-            height: 50px;
-            width: auto;
+        .navbar-brand {
+            max-width: 70%;
         }
 
         .logo-text {
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 800;
-            color: var(--navy-corporate);
-            text-transform: uppercase;
+            font-size: 9px;
+        }
+
+        /* Perbaikan dropdown menu mobile */
+        .navbar-collapse {
+            background: white;
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .nav-link {
-            color: var(--navy-corporate) !important;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 10px;
-            transition: color 0.3s;
+            margin: 10px 0;
+            padding-left: 0;
         }
 
-        .nav-link:hover {
-            color: var(--power-red) !important;
-        }
-
-        /* --- 3. HERO SECTION --- */
         .hero-section {
-            position: relative;
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            /* Background Stack: Color > Gradient > Image */
-            background-color: var(--deep-black); 
-            background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.8)), 
-                              url('img/background/bg6.png'); /* Pastikan path gambar benar */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
-            padding-top: 80px; /* Kompensasi Navbar Fixed */
+            background-attachment: scroll; /* Performance boost for mobile */
         }
+    }
 
-        .hero-tagline {
-            color: var(--power-red);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
+    @media (max-width: 575.98px) {
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 1.8rem; /* Ukuran khusus layar sangat kecil */
         }
-
-        .hero-desc {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Typewriter Effect */
-        .typewriter {
-            display: inline-block;
-            overflow: hidden;
-            border-right: .15em solid var(--power-red);
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: -1px;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--power-red); } }
         
-        /* Scroll Animation */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.5;
-            animation: scrollBounce 2s infinite;
-        }
-        @keyframes scrollBounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-            40% {transform: translateY(-10px) translateX(-50%);}
-            60% {transform: translateY(-5px) translateX(-50%);}
-        }
-
-        /* --- 4. ABOUT SECTION (Dark Theme) --- */
-        .bg-dark-theme {
-            background-color: var(--deep-black);
-            color: #ffffff;
-        }
-
-        .section-title {
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: inline-block;
-            position: relative;
-        }
-
-        /* Kotak Prioritas (Grid 3) */
         .priority-box {
-            background: rgba(30, 41, 59, 0.4); /* Glass Dark */
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            height: 100%;
-            transition: all 0.4s ease;
-        }
-
-        .priority-box:hover {
-            transform: translateY(-10px);
-            background: rgba(30, 41, 59, 0.8);
-            border-color: var(--power-red);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* --- 5. VISION & MISSION --- */
-        .vision-section {
-            background: var(--navy-corporate);
-            color: white;
-        }
-
-        .mision-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: flex-start;
-        }
-        .mision-item i {
-            color: var(--power-red);
-            font-size: 1.4rem;
-            margin-top: -3px;
-        }
-
-        /* --- 6. CAPABILITY (Services) --- */
-        .cap-card {
-            border: 1px solid #eee;
-            border-radius: 15px;
-            transition: 0.3s;
-            background: white;
-            height: 100%;
-        }
-        .cap-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-color: var(--power-red);
-        }
-
-        /* --- 7. MANAGEMENT (Clean Light) --- */
-        .mgmt-card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .mgmt-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .mgmt-img-wrapper {
-            width: 100%;
-            aspect-ratio: 3/4; /* Format Pas Foto Standar */
-            overflow: hidden;
-            background-color: #e2e8f0;
-        }
-        .mgmt-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            transition: transform 0.5s;
-        }
-        .mgmt-card:hover img {
-            transform: scale(1.05);
-        }
-        .mgmt-info {
             padding: 20px;
-            text-align: center;
         }
-
-        /* --- 8. CONTACT --- */
-        .contact-section {
-            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-        .contact-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            height: 100%;
-            transition: 0.3s;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .icon-circle {
-            width: 70px;
-            height: 70px;
-            background: var(--navy-corporate);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 20px;
-            transition: 0.4s;
-        }
-        .contact-card:hover .icon-circle {
-            background: var(--power-red);
-            transform: rotateY(180deg);
-        }
-
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .typewriter { white-space: normal; border: none; animation: none; }
-            .section-title { font-size: 1.8rem; }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+   <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <a class="navbar-brand" href="#">
                 <img src="img/logo/logopt1.png" alt="AMP Logo" class="navbar-logo" onerror="this.style.display='none'">
                 <div class="logo-text">
                     PT ANUGRAH<br><span style="color:var(--power-red)">MINERAL</span> PERSADA
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="bi bi-list"></span>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list" style="font-size: 2rem; color: var(--navy-corporate);"></i>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
